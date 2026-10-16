@@ -1,0 +1,31 @@
+name: Bug report (English)
+description: Report a connection or configuration issue
+title: "[Bug] "
+body:
+  - type: input
+    id: model
+    attributes:
+      label: Keyboard model and firmware
+      placeholder: Brand, full model name, firmware if known
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: OS, browser version and connection mode
+      placeholder: macOS / Windows, Chrome / Edge version, USB / receiver
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and actual behavior
+      description: Include error messages or screenshots, with unrelated personal information removed.
+    validations:
+      required: true

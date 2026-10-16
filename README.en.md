@@ -2,84 +2,141 @@
 
 # Let Me Drive
 
-**The web keyboard driver collection. Stop installing keyboard drivers.**
+### A keyboard configurator in your browser
 
-I reverse-engineered the official Windows drivers of 200+ keyboards and rebuilt every brand, model and setting they support — down to what each individual key can be remapped to — as a single web page.<br>
-Open it, tune your keyboard, and the change is written to the keyboard instantly. Same on Windows and macOS.
+Remap keys, record macros, adjust lighting and configure Hall-effect switches.
 
-[**Open letmedrive.cn**](https://letmedrive.cn) · [Supported keyboards](https://letmedrive.cn/keyboards) · [Request a keyboard](https://github.com/MukiCheung/letmedrive/issues/new?template=support-request.yml) · [Report a problem](https://github.com/MukiCheung/letmedrive/issues/new?template=bug.yml) · [中文](README.md)
+[简体中文](README.md) · **English**
 
-![Let Me Drive](.github/assets/screenshot.jpg)
+[Open the app](https://letmedrive.cn) · [Find your keyboard](https://letmedrive.cn/keyboards) · [User guide](docs/guide.en.md) · [Report an issue](https://github.com/MukiCheung/letmedrive/issues/new?template=bug-en.yml)
+
+![Windows / macOS](https://img.shields.io/badge/platform-Windows%20%2F%20macOS-24292f?style=flat-square)
+![Chrome / Edge](https://img.shields.io/badge/browser-Chrome%20%2F%20Edge-24292f?style=flat-square)
+![WebHID](https://img.shields.io/badge/connection-WebHID-24292f?style=flat-square)
+
+![Let Me Drive keyboard configuration interface](.github/assets/screenshot.jpg)
 
 </div>
 
-## What it is
-
-Every keyboard brand ships its own driver. Most are Windows-only, keep a service running in the background, and need reinstalling for every new keyboard and every new computer. On a Mac, many keyboards have no driver at all.
-
-Let Me Drive moves all of that into the browser. Each of those 200+ official drivers was reverse-engineered to learn exactly what every model can do, and every setting was rebuilt so it works straight from a web page, applies live and is saved to the keyboard.
-
-- **Nothing to install**: open [letmedrive.cn](https://letmedrive.cn) in Chrome or Edge
-- **Windows and macOS**: keyboards that only had a Windows driver now work on a Mac too
-- **Saved on the keyboard**: settings stay after you unplug it or move to another computer
-- **Local only**: nothing is uploaded, no account needed
-
-## Features
-
-### Remapping
-Click any key on the on-screen keyboard and turn it into another key, a shortcut, a media or mouse button, a layer switch or a macro, with separate layers such as Fn. Each keyboard only offers the options its firmware accepts.
-
-![Remapping](.github/assets/remap.jpg)
-
-### Macros
-Record a macro by typing it, or edit it step by step — press, release, tap and precise delays. Macros live in the keyboard's slots and can be exported as files.
-
-![Macros](.github/assets/macro.jpg)
-
-### Lighting
-Every built-in effect of the keyboard, plus colour, brightness and speed. Per-key colour on models that support it.
-
-![Lighting](.github/assets/lighting.jpg)
-
-### Hall-effect keyboards
-Per-key actuation point, rapid trigger and its press / release sensitivity. The current actuation is shown on each keycap; ⚡ marks rapid trigger.
-
-![Hall effect](.github/assets/magnetic.jpg)
-
-### Advanced keys and onboard settings
-Depending on the model: dynamic keystrokes (DKS), tap / hold actions, toggle keys, polling rate, debounce, sleep timer, Win-key lock and more.
-
-### Key tester
-Works without connecting: type to find dead keys, with a heat map and chatter detection.
-
-![Key tester](.github/assets/tester.png)
-
-### Backups
-See every remapped key in one list, restore any of them or everything, and export / import full profiles.
-
-## Supported keyboards
-
-195 brands, 35 protocol families, 3,800+ models; 3,819 of them pass a full write → read-back check against simulated firmware. Including Keychron, Royal Kludge, AJAZZ, Aula, Akko / MonsGeek, Dareu, MCHOSE, NuPhy, Epomaker, Wooting, DrunkDeer, Dygma, 8BitDo, Razer, Logitech, Corsair, SteelSeries, ASUS ROG, HyperX, Cooler Master, Ducky, REALFORCE, ROCCAT, Mountain, Glorious and QMK / VIA / Vial boards. Full list: [letmedrive.cn/keyboards](https://letmedrive.cn/keyboards).
-
-## How to use
-
-1. Connect the keyboard with a cable (some models also work over their 2.4 GHz receiver).
-2. Open [letmedrive.cn](https://letmedrive.cn) in desktop **Chrome** or **Edge**.
-3. Click **Connect** and pick your keyboard; the model is detected automatically.
-
-No keyboard at hand? Try the demo on the home page.
-
-## FAQ
-
-**Do I really not need any driver?** No. The browser talks to the keyboard directly over WebHID — the web page is the driver.
-**Does it work on a Mac?** Yes, in Chrome or Edge. Safari and Firefox don't support WebHID.
-**Will my settings be lost?** No, they're written to the keyboard.
-**Can it break my keyboard?** It only writes settings the official driver can change. If things get messed up, use "restore all defaults", the vendor tool, or the keyboard's own factory-reset combo.
-
-## Limitations
-
-Desktop Chrome or Edge only. Some wireless keyboards can only be configured when wired or on their receiver (not over Bluetooth). Models marked "experimental" are still being completed.
+[Quick start](#quick-start) · [Features](#features) · [Compatibility](#compatibility) · [FAQ](#faq) · [Feedback](#feedback)
 
 ## About
 
-Let Me Drive is a personal project and is not affiliated with any keyboard manufacturer; all trademarks belong to their owners. Changing keyboard settings carries some risk.
+Let Me Drive brings configuration tools for multiple keyboard brands into one browser interface. Supported keyboards can connect through Chrome or Edge on Windows and macOS, without installing a separate desktop client for this project.
+
+The app communicates with the keyboard over WebHID. Available controls and save behavior depend on the model and firmware.
+
+**This repository contains product information, documentation and issue tracking. The app is currently free to use. Its application source code is not published in this repository.**
+
+## Quick start
+
+1. **Check your model** in the [keyboard directory](https://letmedrive.cn/keyboards), including its supported connection modes.
+2. **Connect the keyboard**, preferably with a USB data cable. Receiver support varies by model.
+3. **Open [letmedrive.cn](https://letmedrive.cn)** in desktop Chrome or Edge.
+4. **Grant device access** using the connect button and select your keyboard in the browser dialog.
+5. **Make a small change**, follow the save instructions and verify the result on the device.
+
+No keyboard nearby? Open the demo from the home page to explore the interface.
+
+[Connection, saving and troubleshooting guide →](docs/guide.en.md)
+
+## Features
+
+These are the available feature categories. Each keyboard exposes the controls supported by its hardware and firmware.
+
+<table>
+<tr>
+<td width="50%">
+<h3>Remapping & layers</h3>
+<p>Select keys on the keyboard layout and assign keys, shortcuts, media controls, mouse actions or layer switches.</p>
+<img src=".github/assets/remap.jpg" alt="Key remapping and layers">
+</td>
+<td width="50%">
+<h3>Macro recording & editing</h3>
+<p>Record input, edit press/release events and delays, then assign the macro to a key. Export macros for backup.</p>
+<img src=".github/assets/macro.jpg" alt="Macro recording and event editor">
+</td>
+</tr>
+<tr>
+<td>
+<h3>Lighting</h3>
+<p>Adjust effects, colors, brightness and speed. Per-key color is available on supported models.</p>
+<img src=".github/assets/lighting.jpg" alt="RGB lighting controls">
+</td>
+<td>
+<h3>Hall effect & rapid trigger</h3>
+<p>Set actuation distance, rapid trigger and press/release sensitivity on supported Hall-effect keyboards.</p>
+<img src=".github/assets/magnetic.jpg" alt="Hall-effect actuation and rapid trigger controls">
+</td>
+</tr>
+</table>
+
+| Feature | Purpose |
+| --- | --- |
+| Advanced keys | Configure DKS, tap/hold actions and toggle behavior on supported models |
+| Onboard settings | Adjust available polling rate, debounce, sleep timer and Win-key lock controls |
+| Profile backup | Export configurations; check model and format compatibility before importing |
+| Key tester | Inspect key response, press counts and chatter detection results |
+
+<details>
+<summary>View the key tester</summary>
+
+![Key tester and heat map](.github/assets/tester.png)
+
+</details>
+
+## Compatibility
+
+| Environment | Notes |
+| --- | --- |
+| Windows / macOS | Use desktop Chrome or Edge |
+| Safari / Firefox / mobile browsers | Not supported environments for the configurator |
+| USB wired | Recommended starting point |
+| 2.4 GHz receiver | Depends on the keyboard and receiver protocol |
+| Bluetooth | Configuration support is not guaranteed; prefer wired mode |
+
+The directory includes models from Keychron, Royal Kludge, AJAZZ, Aula, Akko / MonsGeek, NuPhy, MCHOSE, Wooting, DrunkDeer, Dygma and 8BitDo, plus some QMK / VIA / Vial keyboards. **A listed brand does not imply support for every model, and firmware revisions can differ.**
+
+Check the exact entry in the [live directory](https://letmedrive.cn/keyboards) and the controls shown after connection. Entries marked experimental are still being developed.
+
+### Validation scope
+
+Simulated-device write/read-back checks validate protocol handling. Physical-device behavior also depends on firmware, connection mode and hardware responses. Passing simulation does not establish complete physical-device validation for a model. Include model and firmware details when reporting differences.
+
+## FAQ
+
+<details>
+<summary><strong>Is this a driver or a web app?</strong></summary>
+
+It is a web configuration tool. Normal keyboard input is handled by the operating system's HID support. The app reads and changes supported device settings; it does not replace the operating system driver.
+
+</details>
+
+<details>
+<summary><strong>Do settings remain after I close the page?</strong></summary>
+
+Settings with onboard persistence can be saved on the keyboard. Save behavior varies by model. Follow the app's write instructions and reconnect to verify. Export important configurations first.
+
+</details>
+
+<details>
+<summary><strong>Why is my keyboard missing from the device dialog?</strong></summary>
+
+Use Chrome or Edge, check that the cable supports data, switch to wired mode and close vendor configuration tools that may be using the device. See the [troubleshooting guide](docs/guide.en.md#connection-troubleshooting).
+
+</details>
+
+<details>
+<summary><strong>What if my model is missing or a feature behaves incorrectly?</strong></summary>
+
+[Request support](https://github.com/MukiCheung/letmedrive/issues/new?template=support-request-en.yml) for a missing model, or [report an issue](https://github.com/MukiCheung/letmedrive/issues/new?template=bug-en.yml) for unexpected behavior. Include the full model name, OS, browser, connection mode and reproduction steps.
+
+</details>
+
+## Feedback
+
+- [Report a bug](https://github.com/MukiCheung/letmedrive/issues/new?template=bug-en.yml): include steps, expected behavior and actual results.
+- [Request keyboard support](https://github.com/MukiCheung/letmedrive/issues/new?template=support-request-en.yml): include the full model and official product or configuration-tool links.
+- [Improve the docs](CONTRIBUTING.md): corrections, translations and notes verified on real hardware are welcome.
+
+Maintained by [Muki Cheung](https://github.com/MukiCheung). This project is not affiliated with the keyboard manufacturers mentioned. All brands and trademarks belong to their respective owners.

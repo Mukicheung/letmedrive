@@ -1,0 +1,21 @@
+name: Keyboard support request (English)
+description: Request support for a keyboard model
+title: "[Keyboard] "
+body:
+  - type: input
+    id: model
+    attributes:
+      label: Brand and full model name
+    validations:
+      required: true
+  - type: textarea
+    id: links
+    attributes:
+      label: Official product and configuration-tool links
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Device details
+      description: Connection modes, firmware version and device information if available. Note whether you own the keyboard and can test it.

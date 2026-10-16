@@ -1,117 +1,142 @@
 <div align="center">
 
-# 网页键盘驱动大合集
+# Let Me Drive
 
-**Let Me Drive · 从今天开始，不用再下载任何键盘驱动。**
+### 网页键盘驱动大合集
 
-我逆向了 200 多款键盘的官方 Windows 驱动，把它们支持的品牌、型号和每一项功能，全部做进了一个网页。<br>
-打开网页就能调，改动实时生效、直接写进键盘。Windows 和 Mac 都一样。
+在浏览器里改键、录宏、调灯光，设置磁轴触发参数。
 
-[**打开网页 → letmedrive.cn**](https://letmedrive.cn) · [已适配的键盘](https://letmedrive.cn/keyboards) · [提交适配需求](https://github.com/MukiCheung/letmedrive/issues/new?template=support-request.yml) · [反馈问题](https://github.com/MukiCheung/letmedrive/issues/new?template=bug.yml) · [English](README.en.md)
+**简体中文** · [English](README.en.md)
 
-![网页键盘驱动大合集](.github/assets/screenshot.jpg)
+[开始使用](https://letmedrive.cn) · [查找键盘](https://letmedrive.cn/keyboards) · [使用指南](docs/guide.zh-CN.md) · [反馈问题](https://github.com/MukiCheung/letmedrive/issues/new?template=bug.yml)
+
+![平台：Windows / macOS](https://img.shields.io/badge/platform-Windows%20%2F%20macOS-24292f?style=flat-square)
+![浏览器：Chrome / Edge](https://img.shields.io/badge/browser-Chrome%20%2F%20Edge-24292f?style=flat-square)
+![连接：WebHID](https://img.shields.io/badge/connection-WebHID-24292f?style=flat-square)
+
+![Let Me Drive 键盘配置界面](.github/assets/screenshot.jpg)
 
 </div>
 
-## 这是什么
+[快速开始](#快速开始) · [功能](#功能) · [兼容性](#兼容性) · [常见问题](#常见问题) · [参与反馈](#参与反馈)
 
-每个键盘品牌都有自己的驱动：大多只有 Windows 版，装完常驻后台；换一把键盘要再装一个，换一台电脑又要重新装一遍。Mac 用户更难，很多键盘根本没有 Mac 版驱动。
+## 关于项目
 
-网页键盘驱动大合集把这些驱动做的事，统一搬进了浏览器。我逐个逆向了 200 多款官方 Windows 驱动，弄清每个品牌、每个型号能调什么，包括**每一个键能改成什么**，再把所有调整都做成网页里能直接操作、实时生效、写入键盘的方式。
+Let Me Drive 是一个浏览器里的键盘配置工具，把多个品牌的配置功能放到同一个界面。支持的键盘可以在 Windows 和 macOS 上通过 Chrome 或 Edge 连接，不需要另外安装本项目的桌面客户端。
 
-一个网页，替代一抽屉的驱动。
+连接后，网页通过 WebHID 与键盘通信。能调整哪些选项、如何保存，取决于具体型号和固件。
 
-- **不用下载、不用安装**：Chrome 或 Edge 打开 [letmedrive.cn](https://letmedrive.cn) 就能用
-- **Windows、Mac 通用**：原本只有 Windows 驱动的键盘，在 Mac 上也能调
-- **写进键盘**：改完保存在键盘里，拔掉、换电脑、不开网页都还在
-- **本地完成**：配置不上传，不用注册账号
+**本仓库用于产品介绍、使用文档和问题反馈。应用目前免费使用，应用源代码未在本仓库公开。**
 
-## 能调什么
+## 快速开始
 
-### 改键
+1. **查型号**：在[键盘列表](https://letmedrive.cn/keyboards)确认具体型号和连接方式。
+2. **接键盘**：优先使用 USB 数据线；接收器支持情况按型号查看。
+3. **打开网页**：用电脑上的 Chrome 或 Edge 访问 [letmedrive.cn](https://letmedrive.cn)。
+4. **授权连接**：点击「连接键盘」，在浏览器设备列表里选择对应设备。
+5. **修改并验证**：先改一个键或一种灯效，按页面提示保存，再检查实际效果。
 
-点键盘图上任意一个键，把它换成别的键、组合键、媒体键、鼠标按键、层切换或者一段宏。支持多层（比如 Fn 层）分开设置。每把键盘只显示它固件认的选项，不会让你选了再报错。
+没有键盘在手边？可以先在首页打开演示，看看操作界面。
 
-![改键](.github/assets/remap.jpg)
+[查看连接、保存和排查指南 →](docs/guide.zh-CN.md)
 
-### 宏
+## 功能
 
-点「录制」直接在键盘上按一遍，或者一步步手动编辑：按下、松开、单击、延时都可以精确调整。宏写进键盘的槽位，再到「改键」里绑到任意键上；也能导出成文件备份。
+以下是产品提供的功能类别。具体键盘会按其支持能力显示选项。
 
-![宏](.github/assets/macro.jpg)
+<table>
+<tr>
+<td width="50%">
+<h3>改键与分层</h3>
+<p>在键盘图上选择按键，设置普通键、组合键、媒体键、鼠标操作或层切换。</p>
+<img src=".github/assets/remap.jpg" alt="按键映射与分层设置">
+</td>
+<td width="50%">
+<h3>宏录制与编辑</h3>
+<p>录制输入，调整按下、松开和延时，再将宏绑定到按键；支持导出备份。</p>
+<img src=".github/assets/macro.jpg" alt="宏录制与事件编辑">
+</td>
+</tr>
+<tr>
+<td>
+<h3>灯光</h3>
+<p>调整灯效、颜色、亮度和速度。支持逐键灯光的型号可单独设置按键颜色。</p>
+<img src=".github/assets/lighting.jpg" alt="RGB 灯光设置">
+</td>
+<td>
+<h3>磁轴与快速触发</h3>
+<p>在支持的磁轴键盘上调整触发行程、Rapid Trigger 和按下、抬起灵敏度。</p>
+<img src=".github/assets/magnetic.jpg" alt="磁轴触发行程和快速触发设置">
+</td>
+</tr>
+</table>
 
-### 灯光
+| 功能 | 用途 |
+| --- | --- |
+| 高级键 | 在支持的型号上配置 DKS、轻按 / 长按和切换行为 |
+| 板载参数 | 调整型号开放的回报率、防抖、休眠时间、Win 键锁等设置 |
+| 配置备份 | 导出配置，保留调整记录；导入前核对型号和配置格式 |
+| 按键测试 | 查看按键响应、按压次数和连击检测结果 |
 
-灯效、颜色、亮度、速度，按键盘自带的全部灯效列出来，一眼就能换。支持逐键灯光的型号，可以给每个键单独上色。
+<details>
+<summary>查看按键测试界面</summary>
 
-![灯光](.github/assets/lighting.jpg)
+![按键测试和热力图](.github/assets/tester.png)
 
-### 磁轴
+</details>
 
-磁轴键盘的每个键都能单独设置触发行程，开关 RT 快速触发、调按下和抬起的灵敏度。键帽上直接显示当前行程，⚡ 表示已开快速触发。
+## 兼容性
 
-![磁轴](.github/assets/magnetic.jpg)
+| 环境 | 使用说明 |
+| --- | --- |
+| Windows / macOS | 使用桌面版 Chrome 或 Edge |
+| Safari / Firefox / 手机浏览器 | 不作为当前配置工具的支持环境 |
+| USB 有线 | 建议首先尝试的连接方式 |
+| 2.4 GHz 接收器 | 取决于型号与接收器协议 |
+| 蓝牙 | 不保证可用于配置；优先切换有线模式 |
 
-### 高级键与板载设置
+型号目录包含 Keychron、Royal Kludge、AJAZZ、Aula、Akko / MonsGeek、NuPhy、MCHOSE、Wooting、DrunkDeer、Dygma、8BitDo 等品牌，以及部分 QMK / VIA / Vial 键盘。**同品牌不等于全型号支持，同型号不同固件也可能有差异。**
 
-按型号开放：一键多指令（DKS）、长按 / 轻按不同功能、切换键，以及回报率、按键防抖、休眠时间、Win 键锁等键盘自身的设置。
+以[在线键盘目录](https://letmedrive.cn/keyboards)中的具体条目和连接后的功能显示为准。标为「实验性」的项目仍在完善。
 
-### 按键测试
+### 验证范围
 
-不连驱动也能用：敲一遍就知道哪个键坏了。热力图显示每个键按了多少次，还能检测连击（一次按下被识别成多次）。
-
-![按键测试](.github/assets/tester.png)
-
-### 配置备份
-
-改过的键会列在一起，可以单个还原、全部恢复默认，也能把整套配置导出成文件，换一把同款键盘再导入。
-
-## 支持哪些键盘
-
-目前覆盖 **195 个品牌、35 类协议、3,800 多款型号**，其中 3,819 款的全部功能都已在模拟设备上逐项「写入 → 读回」核验。
-
-- **键盘品牌**：Keychron、Royal Kludge、黑爵 AJAZZ、狼蛛 Aula、Akko / MonsGeek、达尔优、迈从 MCHOSE、腹灵、VGN、NuPhy、Epomaker、新盟、珂芝、杜伽、阿米洛、ATK、Wooting、DrunkDeer、Dygma、8BitDo……
-- **外设大厂**：雷蛇 Razer、罗技 Logitech、海盗船 Corsair、赛睿 SteelSeries、华硕 ROG、HyperX、酷冷至尊、魔力鸭 Ducky、燃风 REALFORCE、冰豹 ROCCAT、山峦 Mountain、Glorious、雷神、机械师……
-- **开源固件**：QMK / VIA / Vial 键盘
-
-完整型号列表：[letmedrive.cn/keyboards](https://letmedrive.cn/keyboards)。每款能调的项目以连接后页面上显示的为准；标着「实验性」的型号还在补全。
-
-## 怎么用
-
-1. 用数据线把键盘接到电脑（部分型号也支持 2.4G 接收器）。
-2. 用电脑上的 **Chrome** 或 **Edge** 打开 [letmedrive.cn](https://letmedrive.cn)。
-3. 点「连接键盘」，在弹窗里选中你的键盘。网页会自动认出型号，切到你想调的功能就行。
-
-手边没有键盘，也可以在首页点「先看演示」，用模拟键盘把所有功能点一遍。
+模拟设备的写入、读回检查用于验证协议处理逻辑；真机还涉及固件版本、连接模式和设备实际响应。模拟测试通过不等于对应型号的所有真机均已验证。反馈时附上具体型号和固件信息，可以帮助定位差异。
 
 ## 常见问题
 
-**真的不用装任何驱动吗？**
-不用。浏览器通过 WebHID 直接和键盘通信，网页就是驱动。
+<details>
+<summary><strong>这是键盘驱动，还是网页工具？</strong></summary>
 
-**Mac 能用吗？**
-能。Mac 上用 Chrome 或 Edge，和 Windows 完全一样。Safari、Firefox 不支持 WebHID。
+它是网页配置工具。键盘日常输入仍由操作系统的 HID 支持处理；网页负责读取和修改设备支持的配置，不替换操作系统驱动。
 
-**改完会不会丢？**
-不会。改动直接写进键盘，关掉网页、换电脑都还在。
+</details>
 
-**会不会把键盘改坏？**
-只会写入官方驱动本来就能改的设置。真的调乱了，可以在网页里「恢复全部默认」，或者用官方驱动、键盘自带的组合键恢复出厂设置。
+<details>
+<summary><strong>关闭网页后，设置还在吗？</strong></summary>
 
-**我的键盘不在列表里怎么办？**
-[提交适配需求](https://github.com/MukiCheung/letmedrive/issues/new?template=support-request.yml)，写上型号；连接后页面里的「设备信息」能帮我更快适配。
+支持板载保存的设置可保存在键盘中。具体保存行为取决于型号；按页面提示完成写入后，可以断开重连检查。重要配置先导出备份。
 
-## 已知限制
+</details>
 
-- 需要电脑上的 Chrome 或 Edge；手机浏览器、Safari、Firefox 不支持。
-- 部分无线键盘只能在有线或接收器模式下调，蓝牙模式下浏览器连不上。
-- 少数型号标着「实验性」，部分功能还在补全。
+<details>
+<summary><strong>连接列表里没有键盘，怎么办？</strong></summary>
 
-## 反馈
+先确认使用 Chrome 或 Edge 和可传输数据的 USB 线，切换到有线模式，并关闭可能占用设备的官方配置工具。更多步骤见[使用指南](docs/guide.zh-CN.md#连接排查)。
 
-- **没找到你的键盘**：[提交适配需求](https://github.com/MukiCheung/letmedrive/issues/new?template=support-request.yml)
-- **某个功能不对**：[反馈问题](https://github.com/MukiCheung/letmedrive/issues/new?template=bug.yml)，写清型号、做了什么、看到了什么
+</details>
 
-## 说明
+<details>
+<summary><strong>找不到型号，或者某项功能不正常？</strong></summary>
 
-网页键盘驱动大合集（Let Me Drive）是个人项目，与任何键盘厂商无关，文中提到的品牌和商标归各自所有。修改键盘设置有一定风险，请自行判断。
+找不到型号可[提交适配需求](https://github.com/MukiCheung/letmedrive/issues/new?template=support-request.yml)；已连接但行为异常可[反馈问题](https://github.com/MukiCheung/letmedrive/issues/new?template=bug.yml)。请提供完整型号、系统、浏览器、连接方式和复现步骤。
+
+</details>
+
+## 参与反馈
+
+- [报告问题](https://github.com/MukiCheung/letmedrive/issues/new?template=bug.yml)：描述操作步骤、预期效果和实际结果。
+- [申请型号适配](https://github.com/MukiCheung/letmedrive/issues/new?template=support-request.yml)：提供完整型号、官方产品页或配置工具链接。
+- [改进文档](CONTRIBUTING.md)：欢迎纠错、翻译和补充经过实际使用验证的说明。
+
+由 [Muki Cheung](https://github.com/MukiCheung) 维护。项目与文中键盘厂商无隶属关系，品牌与商标归各自所有。
