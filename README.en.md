@@ -7,7 +7,7 @@
 I reverse-engineered the official Windows drivers of 200+ keyboards and rebuilt every brand, model and setting they support — down to what each individual key can be remapped to — as a single web page.<br>
 Open it, tune your keyboard, and the change is written to the keyboard instantly. Same on Windows and macOS.
 
-[**Open letmedrive.cn**](https://letmedrive.cn) · [Supported keyboards](https://letmedrive.cn/keyboards) · [Request a keyboard](https://github.com/tainanzhui/letmedrive/issues/new?template=support-request.yml) · [Report a problem](https://github.com/tainanzhui/letmedrive/issues/new?template=bug.yml) · [中文](README.md)
+[**Open letmedrive.cn**](https://letmedrive.cn) · [Supported keyboards](https://letmedrive.cn/keyboards) · [Request a keyboard](https://github.com/MukiCheung/letmedrive/issues/new?template=support-request.yml) · [Report a problem](https://github.com/MukiCheung/letmedrive/issues/new?template=bug.yml) · [中文](README.md)
 
 ![Let Me Drive](.github/assets/screenshot.jpg)
 

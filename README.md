@@ -7,7 +7,7 @@
 我逆向了 200 多款键盘的官方 Windows 驱动，把它们支持的品牌、型号和每一项功能，全部做进了一个网页。<br>
 打开网页就能调，改动实时生效、直接写进键盘。Windows 和 Mac 都一样。
 
-[**打开网页 → letmedrive.cn**](https://letmedrive.cn) · [已适配的键盘](https://letmedrive.cn/keyboards) · [提交适配需求](https://github.com/tainanzhui/letmedrive/issues/new?template=support-request.yml) · [反馈问题](https://github.com/tainanzhui/letmedrive/issues/new?template=bug.yml) · [English](README.en.md)
+[**打开网页 → letmedrive.cn**](https://letmedrive.cn) · [已适配的键盘](https://letmedrive.cn/keyboards) · [提交适配需求](https://github.com/MukiCheung/letmedrive/issues/new?template=support-request.yml) · [反馈问题](https://github.com/MukiCheung/letmedrive/issues/new?template=bug.yml) · [English](README.en.md)
 
 ![网页键盘驱动大合集](.github/assets/screenshot.jpg)
 
@@ -99,7 +99,7 @@
 只会写入官方驱动本来就能改的设置。真的调乱了，可以在网页里「恢复全部默认」，或者用官方驱动、键盘自带的组合键恢复出厂设置。
 
 **我的键盘不在列表里怎么办？**
-[提交适配需求](https://github.com/tainanzhui/letmedrive/issues/new?template=support-request.yml)，写上型号；连接后页面里的「设备信息」能帮我更快适配。
+[提交适配需求](https://github.com/MukiCheung/letmedrive/issues/new?template=support-request.yml)，写上型号；连接后页面里的「设备信息」能帮我更快适配。
 
 ## 已知限制
 
@@ -109,8 +109,8 @@
 
 ## 反馈
 
-- **没找到你的键盘**：[提交适配需求](https://github.com/tainanzhui/letmedrive/issues/new?template=support-request.yml)
-- **某个功能不对**：[反馈问题](https://github.com/tainanzhui/letmedrive/issues/new?template=bug.yml)，写清型号、做了什么、看到了什么
+- **没找到你的键盘**：[提交适配需求](https://github.com/MukiCheung/letmedrive/issues/new?template=support-request.yml)
+- **某个功能不对**：[反馈问题](https://github.com/MukiCheung/letmedrive/issues/new?template=bug.yml)，写清型号、做了什么、看到了什么
 
 ## 说明
 
