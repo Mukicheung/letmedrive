@@ -1,0 +1,28 @@
+name: 提交适配需求
+description: 你的键盘还不在列表里
+title: "[适配] "
+labels: ["适配需求"]
+body:
+  - type: input
+    id: model
+    attributes:
+      label: 键盘品牌和型号
+      placeholder: 例如：Keychron K8 Pro
+    validations:
+      required: true
+  - type: input
+    id: ids
+    attributes:
+      label: 设备信息（选填）
+      description: 用 Chrome 打开 letmedrive.cn，点「连接键盘」→「显示全部设备」选中你的键盘后，页面里能看到 VID:PID
+      placeholder: 例如：3434:0280
+  - type: dropdown
+    id: conn
+    attributes:
+      label: 连接方式
+      options: ["有线", "2.4G 接收器", "蓝牙", "不确定"]
+  - type: textarea
+    id: want
+    attributes:
+      label: 最想调的功能
+      placeholder: 改键 / 宏 / 灯光 / 磁轴行程……

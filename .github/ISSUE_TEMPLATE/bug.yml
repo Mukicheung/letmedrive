@@ -1,0 +1,24 @@
+name: 反馈问题
+description: 某款键盘的某个功能不对
+title: "[问题] "
+labels: ["问题"]
+body:
+  - type: input
+    id: model
+    attributes:
+      label: 键盘型号
+      description: 页面右上角显示的型号
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: 电脑和浏览器
+      placeholder: 例如：macOS 15 + Chrome 141
+  - type: textarea
+    id: steps
+    attributes:
+      label: 做了什么、看到了什么
+      placeholder: 1. 打开「改键」 2. 把 Caps Lock 改成 Ctrl 3. 提示「写入失败」
+    validations:
+      required: true
